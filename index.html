@@ -175,6 +175,34 @@ transform:scale(1.05);
 from{opacity:0; transform:translateY(20px);}
 to{opacity:1; transform:translateY(0);}
 }
+
+  .memory-section{
+text-align:center;
+margin:80px 0;
+opacity:0;
+transform:scale(0.9);
+transition:all 1.5s ease;
+}
+
+.memory-section.show{
+opacity:1;
+transform:scale(1);
+}
+
+.memory-img{
+width:80%;
+max-width:400px;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,0.25);
+}
+
+.memory-text{
+margin-top:20px;
+font-size:18px;
+color:#555;
+font-style:italic;
+line-height:1.6;
+}
   
 </style>
 
@@ -192,6 +220,20 @@ Someone wrote something for you...
 <button class="start-btn" onclick="startStory()">
 Start Reading
 </button>
+
+  </div>
+
+  <div class="memory-section">
+
+<img src="20260125_012325.jpg" class="memory-img">
+
+<p class="memory-text">
+Two different lives.<br>
+Two different journeys.<br><br>
+
+Yet somehow…<br>
+we met again.
+</p>
 
   </div>
 
@@ -646,6 +688,19 @@ document.getElementById("intro").style.display="none";
 music.play();
 
 }
+
+  const memory=document.querySelector(".memory-section");
+
+window.addEventListener("scroll",()=>{
+
+const position=memory.getBoundingClientRect().top;
+const screen=window.innerHeight;
+
+if(position < screen-100){
+memory.classList.add("show");
+}
+
+});
 function createHeart(){
 
 const heart=document.createElement("div");

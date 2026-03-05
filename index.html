@@ -120,7 +120,13 @@ font-size:16px;
 <button class="music-btn" onclick="toggleMusic()">🎵 Music</button>
 
 <audio id="bgMusic" loop>
-<source src="https://www.youtube.com/watch?v=BWLYFc9MDFI&list=RDBWLYFc9MDFI&index=1">
+<iframe id="ytMusic"
+width="0"
+height="0"
+src="https://www.youtube.com/embed/BWLYFc9MDFI?enablejsapi=1&loop=1&playlist=BWLYFc9MDFI"
+frameborder="0"
+allow="autoplay">
+</iframe>
 </audio>
 
 <div class="container">

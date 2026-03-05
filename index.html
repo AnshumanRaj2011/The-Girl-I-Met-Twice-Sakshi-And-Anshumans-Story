@@ -168,10 +168,10 @@ to{opacity:1; transform:translateY(0);}
 }
 .burst-heart{
 position:fixed;
-font-size:24px;
+font-size:28px;
 color:#ff4d88;
 pointer-events:none;
-animation:heartBurst 1.5s ease-out forwards;
+animation:heartBurst 3s ease-out forwards;
 }
 
 @keyframes heartBurst{
@@ -181,8 +181,12 @@ transform:scale(0) translateY(0);
 opacity:1;
 }
 
+50%{
+opacity:1;
+}
+
 100%{
-transform:scale(1.5) translateY(-200px);
+transform:scale(1.8) translateY(-300px);
 opacity:0;
 }
 
@@ -668,26 +672,26 @@ I don’t just like you anymore.<br><br>
 
 function startStory(){
 
-for(let i=0;i<25;i++){
+for(let i=0;i<40;i++){
 
 const heart=document.createElement("div");
 heart.classList.add("burst-heart");
 heart.innerHTML="❤️";
 
 heart.style.left=Math.random()*100+"vw";
-heart.style.top=(50+Math.random()*20)+"vh";
+heart.style.top=(40+Math.random()*40)+"vh";
 
 document.body.appendChild(heart);
 
 setTimeout(()=>{
 heart.remove();
-},1500);
+},3000);
 
 }
 
 setTimeout(()=>{
 document.getElementById("intro").style.display="none";
-},900);
+},2500);
 
 }
 
